@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <h2>Profesores:</h2>
+    <ul>
+      <% profesors.forEach(profesor => { %>
+      <li> 
+        <h3><mark>DNI Profesor: <%= profesor.id %></mark></h3>
+        <%= `Nombre: ${profesor.nombreProfesor}` %> 
+        <br/> 
+        <%= `Dirección: ${profesor.direccion}` %>  
+        <br/> 
+        <%= `Teléfono: ${profesor.telefono}` %> 
+        <br/>
+        <a href="/profesores/<%= profesor.id %> ">Ver más</a>
+        <% profesor.modulos.forEach(post => { %>
+          <h5>Nombre de módulo: <%= post.nombreModulo %> </h5>
+        <% }) %>
+      </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>

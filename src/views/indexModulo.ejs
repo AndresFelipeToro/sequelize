@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <h2>Modulos:</h2>
+    <ul>
+      <% modulos.forEach(modulo => { %>
+      <li> 
+        <h3><mark>Código módulo: <%= modulo.id %></mark></h3>
+        <%= `Nombre módulo: ${modulo.nombreModulo}` %> 
+        <h4>DNI Profesor: <%= modulo.dniProfesor %> </h4>
+        <a href="/modulos/<%= modulo.id %> ">Ver info profesor</a>
+      </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
